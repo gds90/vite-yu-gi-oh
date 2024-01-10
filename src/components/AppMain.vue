@@ -2,10 +2,6 @@
 import CardsContainer from './CardsContainer.vue';
 export default {
     name: 'AppMain',
-    data() {
-        return {
-        }
-    },
     components: {
         CardsContainer
     }

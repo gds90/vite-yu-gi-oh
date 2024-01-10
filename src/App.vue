@@ -31,7 +31,7 @@ export default {
 </script>
 <template lang="">
   <div>
-    <AppLoader v-if="store.loading"/>
+    <AppLoader v-if="store.loading"/> <!-- Loader con v-if sulla variabile loading -->
     <div v-else>
       <AppHeader />
       <AppMain />

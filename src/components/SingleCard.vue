@@ -3,13 +3,7 @@ export default {
     name: 'SingleCard',
     props: {
         card: Object
-    },
-    data() {
-        return {
-
-        }
     }
-
 }
 </script>
 <template lang="">
