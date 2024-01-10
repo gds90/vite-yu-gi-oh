@@ -1,6 +1,4 @@
 <script>
-debugger
-
 import { store } from '../store';
 export default {
     name: 'AppLoader',
