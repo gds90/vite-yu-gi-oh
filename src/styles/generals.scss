@@ -1,4 +1,4 @@
-@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'node_modules/bootstrap/scss/bootstrap';
 
 
 @import '@fontsource-variable/montserrat';
@@ -11,4 +11,8 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
+}
+
+img {
+    max-width: 100%;
 }
