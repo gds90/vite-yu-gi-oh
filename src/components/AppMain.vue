@@ -21,5 +21,6 @@ export default {
 
 main {
     background-color: $primary_color;
+    padding-top: 50px;
 }
 </style>

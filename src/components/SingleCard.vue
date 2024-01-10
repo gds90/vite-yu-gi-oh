@@ -13,7 +13,7 @@ export default {
 }
 </script>
 <template lang="">
-    <div class="col-12 col-md-6 col-lg-3">
+    <div class="col-5-cards">
         <div class="cards text-center">
             <img :src="card.card_images[0].image_url" :alt="card.name" />
             <h3>{{card.name}}</h3>
@@ -23,6 +23,10 @@ export default {
 </template>
 <style lang="scss">
 @use '../styles/partials/variables' as *;
+
+.col-5-cards {
+    width: calc(100% / 5)
+}
 
 .cards {
     background-color: $primary_color;
