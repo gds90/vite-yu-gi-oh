@@ -1,12 +1,10 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
 export default {
-  data() {
-    return {
-    }
-  },
   components: {
-    AppHeader
+    AppHeader,
+    AppMain
   },
   methods: {
   },
@@ -17,6 +15,7 @@ export default {
 <template lang="">
   <div>
     <AppHeader />
+    <AppMain />
   </div>
 </template>
 <style lang="">

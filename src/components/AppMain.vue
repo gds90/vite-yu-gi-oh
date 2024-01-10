@@ -1,13 +1,22 @@
 <script>
-export default {
 
+export default {
+    name: 'AppMain',
+    data() {
+        return {
+        }
+    },
 }
 </script>
 <template lang="">
-    <div>
+    <main>
         
-    </div>
+    </main>
 </template>
-<style lang="">
-    
+<style lang="scss">
+@use '../styles/partials/variables' as *;
+
+main {
+    background-color: $primary_color;
+}
 </style>
