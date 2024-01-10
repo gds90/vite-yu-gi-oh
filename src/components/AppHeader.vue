@@ -1,13 +1,18 @@
 <script>
 export default {
-
+    name: 'AppHeader'
 }
 </script>
 <template lang="">
-    <div>
-        
-    </div>
+    <header>
+        <div class="container">
+            PROVA PROVA
+        </div>
+    </header>
 </template>
-<style lang="">
-    
+<style lang="scss">
+header {
+    height: 75px;
+    background-color: beige;
+}
 </style>
