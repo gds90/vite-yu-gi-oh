@@ -1,16 +1,19 @@
 <script>
-
+import CardsContainer from './CardsContainer.vue';
 export default {
     name: 'AppMain',
     data() {
         return {
         }
     },
+    components: {
+        CardsContainer
+    }
 }
 </script>
 <template lang="">
     <main>
-        
+        <CardsContainer />
     </main>
 </template>
 <style lang="scss">
