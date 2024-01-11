@@ -20,10 +20,24 @@ export default {
   },
   methods: {
     getCardsList() {
-      axios.get(store.endpoint).then((response) => {
-        this.store.cardsList = response.data.data;
-        this.store.loading = false;
-      });
+
+      if (store.archetype !== '') {
+        let apiUrl = this.store.endpoint;
+
+        apiUrl += `&archetype=${this.store.archetype.archetype_name}`
+        console.log(apiUrl)
+
+        axios.get(apiUrl).then((response) => {
+          this.store.cardsList = response.data.data;
+          this.store.loading = false;
+        });
+      }
+      else {
+        axios.get(store.endpoint).then((response) => {
+          this.store.cardsList = response.data.data;
+          this.store.loading = false;
+        });
+      }
     }
   },
   created() {
@@ -36,7 +50,7 @@ export default {
     <AppLoader v-if="store.loading"/> <!-- Loader con v-if sulla variabile loading -->
     <div v-else>
       <AppHeader />
-      <AppSearch />
+      <AppSearch @filter_archetype="getCardsList"/>
       <main>
         <CardsContainer />
       </main>
