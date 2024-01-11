@@ -14,15 +14,17 @@ export default {
             axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php').then((response) => {
                 this.store.archetypeArray = response.data;
 
+                // CHECK SE ARCHETYPE PRESENTE TRA LE CARTE IN LISTA
                 this.store.archetypeArray.forEach(elem => {
                     for (let i = 0; i < this.store.cardsList.length; i++) {
                         if (elem.archetype_name == this.store.cardsList[i].archetype) {
+                            // CHECK SE NELL'ARRAY DEI MIEI ARCHETYPES è GIA' PRESENTE QUELLO CLICLATO
                             if (this.myArchetypeArray.includes(elem.archetype_name)) {
                                 continue
                             }
+                            // SE NON è PRESENTE, LO PUSHO
                             else {
                                 this.myArchetypeArray.push(elem.archetype_name)
-                                console.log(this.myArchetypeArray)
                             }
                         }
                     }
