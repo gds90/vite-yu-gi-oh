@@ -1,7 +1,7 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
-import AppMain from './components/AppMain.vue';
 import AppLoader from './components/AppLoader.vue';
+import CardsContainer from './components/CardsContainer.vue';
 
 import { store } from './store';
 import axios from 'axios';
@@ -13,8 +13,8 @@ export default {
   },
   components: {
     AppHeader,
-    AppMain,
-    AppLoader
+    AppLoader,
+    CardsContainer
   },
   methods: {
     getCardsList() {
@@ -34,10 +34,17 @@ export default {
     <AppLoader v-if="store.loading"/> <!-- Loader con v-if sulla variabile loading -->
     <div v-else>
       <AppHeader />
-      <AppMain />
+      <main>
+        <CardsContainer />
+      </main>
     </div>
   </div>
 </template>
-<style lang="">
-  
+<style lang="scss" scoped>
+@use './styles/partials/variables' as *;
+
+main {
+  background-color: $primary_color;
+  padding-top: 50px;
+}
 </style>

@@ -10,7 +10,7 @@ export default {
     <div class="col-5-cards">
         <div class="cards text-center">
             <img :src="card.card_images[0].image_url" :alt="card.name" />
-            <h3>{{card.name}}</h3>
+            <h4>{{card.name}}</h4>
             <div class="archetype">{{card.archetype}}</div>
         </div>
     </div>
@@ -28,7 +28,7 @@ export default {
     margin-bottom: 20px;
 
 
-    h3 {
+    h4 {
         text-transform: uppercase;
         color: white;
         font-weight: 500;
