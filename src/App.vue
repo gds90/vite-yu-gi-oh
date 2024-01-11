@@ -2,7 +2,8 @@
 import AppHeader from './components/AppHeader.vue';
 import AppLoader from './components/AppLoader.vue';
 import CardsContainer from './components/CardsContainer.vue';
-import AppSearch from './components/AppSearch.vue'
+import AppSearch from './components/AppSearch.vue';
+import CardsCount from './components/CardsCount.vue';
 
 import { store } from './store';
 import axios from 'axios';
@@ -16,22 +17,24 @@ export default {
     AppHeader,
     AppLoader,
     CardsContainer,
-    AppSearch
+    AppSearch,
+    CardsCount
   },
   methods: {
     getCardsList() {
 
+      // SE L'UTENTE HA SELEZIONATO QUALCOSA NELLA SELECT ALLORA MODIFICO L'URL DELL'API CON L'ARCHETYPE SCELTO
       if (store.archetype !== '') {
         let apiUrl = this.store.endpoint;
 
         apiUrl += `&archetype=${this.store.archetype.archetype_name}`
-        console.log(apiUrl)
 
         axios.get(apiUrl).then((response) => {
           this.store.cardsList = response.data.data;
           this.store.loading = false;
         });
       }
+      // ALTRIMENTI CREO LA LISTA DELLE CARTE DALL'INDIRIZZO ORIGINALE DELL'API
       else {
         axios.get(store.endpoint).then((response) => {
           this.store.cardsList = response.data.data;
@@ -51,6 +54,7 @@ export default {
     <div v-else>
       <AppHeader />
       <AppSearch @filter_archetype="getCardsList"/>
+      <CardsCount/>
       <main>
         <CardsContainer />
       </main>
