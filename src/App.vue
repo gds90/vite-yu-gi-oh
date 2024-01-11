@@ -2,6 +2,7 @@
 import AppHeader from './components/AppHeader.vue';
 import AppLoader from './components/AppLoader.vue';
 import CardsContainer from './components/CardsContainer.vue';
+import AppSearch from './components/AppSearch.vue'
 
 import { store } from './store';
 import axios from 'axios';
@@ -14,7 +15,8 @@ export default {
   components: {
     AppHeader,
     AppLoader,
-    CardsContainer
+    CardsContainer,
+    AppSearch
   },
   methods: {
     getCardsList() {
@@ -34,6 +36,7 @@ export default {
     <AppLoader v-if="store.loading"/> <!-- Loader con v-if sulla variabile loading -->
     <div v-else>
       <AppHeader />
+      <AppSearch />
       <main>
         <CardsContainer />
       </main>
