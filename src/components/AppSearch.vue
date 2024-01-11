@@ -5,8 +5,7 @@ export default {
     name: 'AppSearch',
     data() {
         return {
-            store,
-            myArchetypeArray: []
+            store
         }
     },
     methods: {
