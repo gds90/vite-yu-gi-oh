@@ -36,6 +36,8 @@ export default {
         </div>
     </div>
 </template>
-<style lang="">
-    
+<style lang="scss">
+.form-select {
+    width: 300px;
+}
 </style>
